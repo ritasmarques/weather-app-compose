@@ -11,7 +11,7 @@ A simple Android weather app built with **Kotlin** and **Jetpack Compose**.
 - [Kotlin](https://kotlinlang.org/)
 - [Jetpack Compose](https://developer.android.com/jetpack/compose)
 - [Material3](https://m3.material.io/)
-- [OpenWeatherMap API](https://openweathermap.org/api) (coming soon)
+- [OpenWeatherMap API](https://openweathermap.org/api)
 
 ## Screenshots
 <p align="center">
@@ -35,3 +35,6 @@ Rita Sousa Marques
 
 ## Contact
 Feel free to reach out if you want to collaborate or share feedback!
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
