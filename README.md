@@ -14,9 +14,7 @@ A simple Android weather app built with **Kotlin** and **Jetpack Compose**.
 - [OpenWeatherMap API](https://openweathermap.org/api)
 
 ## Screenshots
-<p align="center">
-  <img src="docs/mockup.png" alt="Weather App Mockup" width="100"/>
-</p>
+<img src="docs/mockup.png" alt="Weather App Mockup" width="200"/>
 
 ## Getting Started
 1. Clone the repository:
