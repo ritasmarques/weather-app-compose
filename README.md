@@ -15,7 +15,7 @@ A simple Android weather app built with **Kotlin** and **Jetpack Compose**.
 
 ## Screenshots
 <p align="center">
-  <img src="docs/mockup.png" alt="Weather App Mockup" width="300"/>
+  <img src="docs/mockup.png" alt="Weather App Mockup" width="100"/>
 </p>
 
 ## Getting Started
