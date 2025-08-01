@@ -3,11 +3,13 @@ package com.example.weatherapp
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 /*
 * Composable: it's what it tells the Android that this function draws UI (interface)
@@ -15,7 +17,10 @@ import androidx.compose.ui.unit.sp
 * Inside the function, I'll use components like como Text, Button, Column, etc., to build the layout.
 */
 @Composable
-fun MainScreen() {
+fun MainScreen(viewModel: WeatherViewModel = viewModel()) {
+    LaunchedEffect(Unit) {
+        viewModel.fetchWeather()
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -28,34 +33,24 @@ fun MainScreen() {
            horizontalAlignment.CenterHorizontally → centres in the horizontal axle */
     ){
         Text(
-            text = "Lisbon",
+            text = viewModel.city,
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = "25ºC",
+            text = viewModel.temperature,
             fontSize = 48.sp,
             fontWeight = FontWeight.ExtraBold
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = "Clear",
+            text = viewModel.description,
             fontSize = 20.sp
         )
-        Spacer(modifier = Modifier.height(16.dp))
-        // Forecast List (hardcoded)
-        val forecastList = listOf(
-            Forecast("Monday", "☀️", 28, 17),
-            Forecast("Tuesday", "🌤️", 27, 18),
-            Forecast("Wednesday", "⛅", 26, 16),
-            Forecast("Thursday", "☀️", 24, 15)
-        )
-        // Showing the forecast
-        ForecastSection(forecastList) // Call the ForecastSection function and sends the data
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(24.dp))
         Button(onClick = {
-            /* empty for now */
+            viewModel.fetchWeather()
         }) {
             Text("Refresh")
         }
